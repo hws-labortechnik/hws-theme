@@ -1,0 +1,119 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: HWS\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-24 10:55+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.7.1; wp-6.7.2\n"
+"X-Domain: hws"
+
+#. Author of the theme
+msgid "Anonymous"
+msgstr ""
+
+#. Name of the template
+#: page-blog.php:2
+msgid "Blog"
+msgstr ""
+
+#. Name of the template
+#: page-contact.php:2
+msgid "Contact"
+msgstr ""
+
+#. Name of the template
+#: page-contact-v2.php:2
+msgid "Contact v2"
+msgstr ""
+
+#. Name of the template
+#: page-contact-v3.php:2
+msgid "Contact v3"
+msgstr ""
+
+#. Name of the template
+#: page-downloads.php:3
+msgid "Downloads"
+msgstr ""
+
+#. Name of the template
+#: page-frontpage.php:2
+msgid "FrontPage"
+msgstr ""
+
+#. Name of the template
+#: page-frontpage-2.php:2
+msgid "FrontPage 2"
+msgstr ""
+
+#. URI of the theme
+msgid "https://hws/"
+msgstr ""
+
+#. Name of the theme
+msgid "HWS"
+msgstr ""
+
+#. Name of the template
+#: page-industries.php:2
+msgid "Industries"
+msgstr ""
+
+#. Name of the template
+#: page-impressum.php:3
+msgid "PageImpressum"
+msgstr ""
+
+#. Name of the template
+#: page-soon.php:3
+msgid "PageSoon"
+msgstr ""
+
+#. Name of the template
+#: page-product.php:2
+msgid "Product"
+msgstr ""
+
+#. Name of the template
+#: page-products.php:2
+msgid "Products"
+msgstr ""
+
+#. Name of the template
+#: page-products-category.php:2
+msgid "ProductsCategory"
+msgstr ""
+
+#. Name of the template
+#: page-product-section1.php:2
+msgid "ProductSection1"
+msgstr ""
+
+#. Name of the template
+#: page-product-section2.php:2
+msgid "ProductSection2"
+msgstr ""
+
+#. Name of the template
+#: page-product-section3.php:2
+msgid "ProductSection3"
+msgstr ""
+
+#. Name of the template
+#: page-product-stirrer.php:2
+msgid "ProductStirrer"
+msgstr ""
+
+#. Name of the template
+#: page-services.php:3
+msgid "Services"
+msgstr ""
