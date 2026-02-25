@@ -1,5 +1,4 @@
 <?php
-error_log('HWS-THEME FUNCTIONS LOADED: ' . __FILE__);
 
 function hws_theme_setup() {
     add_theme_support('title-tag');
@@ -25,7 +24,6 @@ add_action('wp_enqueue_scripts', 'hws_enqueue_fancy_dropdown');
 
 add_filter('show_admin_bar', '__return_false');
 
-add_theme_support( 'post-thumbnails' );
 add_image_size( 'square-600', 600, 600, true ); // Crop the image to exactly 600x600px
 
 // Add contact form processing
@@ -99,45 +97,11 @@ function handle_contact_form_v3() {
                 throw new Exception('Failed to send email');
             }
         } else {
-            // Fallback email sending if process_contact_form doesn't exist
-            $to = 'tamas@utopia.express'; // Your email
-            $subject = 'Contact Form Submission - ' . $data['country'];
-            
-            $message = "
-            <html>
-            <head>
-                <title>New Contact Form Submission</title>
-            </head>
-            <body>
-                <h2>New Contact Form Submission</h2>
-                <p><strong>Country:</strong> {$data['country']}</p>
-                <p><strong>Name:</strong> {$data['first_name']} {$data['last_name']}</p>
-                <p><strong>Email:</strong> {$data['email']}</p>
-                <p><strong>Message:</strong><br>{$data['message']}</p>
-            </body>
-            </html>
-            ";
-            
-            $headers = [
-                'Content-Type: text/html; charset=UTF-8',
-                'From: ' . get_bloginfo('name') . ' <wordpress@' . $_SERVER['HTTP_HOST'] . '>',
-                'Reply-To: ' . $data['first_name'] . ' ' . $data['last_name'] . ' <' . $data['email'] . '>'
-            ];
-            
-            $sent = wp_mail($to, $subject, $message, $headers);
-            
-            if ($sent) {
-                wp_send_json_success(['message' => 'Thank you! We will contact you soon.']);
-            } else {
-                throw new Exception('Failed to send email');
-            }
+            throw new Exception('Contact form processor not available');
         }
     } catch (Exception $e) {
         wp_send_json_error(['message' => $e->getMessage()]);
     }
-    
-    // Always die in WordPress AJAX handlers
-    wp_die();
 }
 
 // Add AJAX URL to page
@@ -161,12 +125,6 @@ function display_products() {
                 $name = get_field('name' . $i, $products_page->ID);
                 $description = get_field('description' . $i, $products_page->ID);
                 $url = get_field('url' . $i, $products_page->ID);
-                
-                // Debugging statements
-                error_log('Product ' . $i . ' - Image: ' . $image);
-                error_log('Product ' . $i . ' - Name: ' . $name);
-                error_log('Product ' . $i . ' - Description: ' . $description);
-                error_log('Product ' . $i . ' - URL: ' . $url);
                 ?>
                 <div class="col-span-12 md:col-span-6 lg:col-span-3 max-h-min relative">
                     <?php if ($image) : ?>
@@ -211,23 +169,3 @@ function display_products() {
         wp_reset_postdata();
     }
 }
-
-// Mail test function - only runs when ?mailtest=1 is in URL
-function hws_mail_test() {
-    if (isset($_GET['mailtest']) && $_GET['mailtest'] == '1') {
-        error_log('MAILTEST: before wp_mail');
-        
-        $to = array(
-    'info@hws-mainz.de',
-    'balint@qualmia.com' // or any address you control
-);
-        $subject = 'Local WP mail test';
-        $body = 'Test email from WordPress theme';
-        $headers = array('Content-Type: text/plain; charset=UTF-8');
-        
-        $sent = wp_mail($to, $subject, $body, $headers);
-        
-        error_log('MAILTEST: wp_mail result = ' . ($sent ? 'YES' : 'NO'));
-    }
-}
-add_action('init', 'hws_mail_test');

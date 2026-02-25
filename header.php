@@ -346,5 +346,3 @@ document.addEventListener('DOMContentLoaded', function() {
     showNavbar();
 });
 </script>
-</body>
-</html>
