@@ -19,7 +19,8 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftp
+          protocol: ftps
+          security: loose
           server-dir: /wordpress_2022/wp-content/themes/hws-theme/
           exclude: |
             **/.git*
