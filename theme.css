@@ -152,6 +152,45 @@ body.menu-open {
     transform: translateX(0);
 }
 
+/* Hamburger button animations */
+.menu-open #toggleMenu span:first-child {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-open #toggleMenu span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-open #toggleMenu span:last-child {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* TranslatePress language switcher */
+.trp-language-switcher {
+  height: auto;
+  position: relative;
+  box-sizing: border-box;
+  width: auto;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.trp-language-switcher > div {
+  box-sizing: border-box;
+  padding: 0px 10px 0px 10px !important;
+  border: 1px solid #e1e1e1 !important;
+  border-radius: 30px !important;
+  /* background-image set dynamically via wp_add_inline_style in functions.php */
+  background-repeat: no-repeat;
+  background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 3px) calc(1em + 0px);
+  background-size: 8px 8px, 8px 8px;
+  background-color: transparent;
+}
+
+div.trp-ls-shortcode-current-language {
+  width: 85px !important;
+}
+
 
 
 

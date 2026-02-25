@@ -33,7 +33,7 @@ data-aos-easing="ease-in-out"
     class="col-span-12 md:col-span-6 bg-black justify-start items-start flex rounded-lg px-6 py-12 min-h-full">
         <div class="self-stretch h-full flex-col justify-start items-start gap-3.5 flex">
           <div class="w-14 h-24 relative">
-            <img src="https://hws-mainz.de/wp-content/uploads/2025/09/Chemical-industry.png" alt="Tailwind CSS Logo">
+            <img src="<?php echo esc_url( site_url('/wp-content/uploads/2025/09/Chemical-industry.png') ); ?>" alt="Chemical Industry">
           </div>
           <div class="self-stretch text-white text-3xl font-light font-['Roboto'] leading-10"><?php the_field('name'); ?></div>
           <div class="self-stretch text-white text-base font-light font-['Roboto'] leading-normal"><?php the_field('title'); ?></div>
@@ -48,7 +48,7 @@ data-aos-easing="ease-in-out"
     class="col-span-12 md:col-span-6 bg-black rounded-lg justify-start items-start flex px-6 py-12 min-h-full">
       <div class="self-stretch h-full flex-col justify-start items-start gap-3.5 flex">
         <div class="w-14 h-24 relative">
-            <img src="https://hws-mainz.de/wp-content/uploads/2025/09/Pharmaceutical-industry.png" alt="Tailwind CSS Logo">
+            <img src="<?php echo esc_url( site_url('/wp-content/uploads/2025/09/Pharmaceutical-industry.png') ); ?>" alt="Pharmaceutical Industry">
         </div>
         <div class="self-stretch text-white text-3xl font-light font-['Roboto'] leading-10"><?php the_field('name2'); ?></div>
         <div class="self-stretch text-white text-base font-light font-['Roboto'] leading-normal"><?php the_field('title2'); ?></div>
@@ -61,7 +61,7 @@ data-aos-easing="ease-in-out"
     <div class="col-span-12 md:col-span-4 px-6 py-12 bg-black rounded-lg justify-start items-start flex">
       <div class="grow shrink basis-0 flex-col justify-center items-start gap-3.5 inline-flex">
         <div class="w-14 h-24 relative">
-            <img src="https://hws-mainz.de/wp-content/uploads/2025/09/Oil-and-Petrochemical-Industry.png" alt="Tailwind CSS Logo">
+            <img src="<?php echo esc_url( site_url('/wp-content/uploads/2025/09/Oil-and-Petrochemical-Industry.png') ); ?>" alt="Oil and Petrochemical Industry">
         </div>
         <div class="self-stretch text-white text-3xl font-light font-['Roboto'] leading-10"><?php the_field('name3'); ?></div>
         <div class="self-stretch text-white text-base font-light font-['Roboto'] leading-normal"><?php the_field('title3'); ?></div>
@@ -70,7 +70,7 @@ data-aos-easing="ease-in-out"
     <div class="col-span-12 md:col-span-4  px-6 py-12 bg-black rounded-lg justify-start items-start flex">
       <div class="grow shrink basis-0 flex-col justify-center items-start gap-3.5 inline-flex">
         <div class="w-14 h-24 relative">
-            <img src="https://hws-mainz.de/wp-content/uploads/2025/09/Food-and-Beverage-Industry.png" alt="Tailwind CSS Logo">
+            <img src="<?php echo esc_url( site_url('/wp-content/uploads/2025/09/Food-and-Beverage-Industry.png') ); ?>" alt="Food and Beverage Industry">
         </div>
         <div class="self-stretch text-white text-3xl font-light font-['Roboto'] leading-10"><?php the_field('name4'); ?></div>
         <div class="self-stretch text-white text-base font-light font-['Roboto'] leading-normal"><?php the_field('title4'); ?></div>
@@ -79,7 +79,7 @@ data-aos-easing="ease-in-out"
     <div class="col-span-12 md:col-span-4 px-6 py-12 bg-black rounded-lg justify-start items-start flex">
       <div class="grow shrink basis-0 flex-col justify-center items-start gap-3.5 inline-flex">
         <div class="w-14 h-24 relative">
-            <img src="https://hws-mainz.de/wp-content/uploads/2025/09/Environmental-Protection-Industry.png" alt="Tailwind CSS Logo">
+            <img src="<?php echo esc_url( site_url('/wp-content/uploads/2025/09/Environmental-Protection-Industry.png') ); ?>" alt="Environmental Protection Industry">
         </div>
         <div class="self-stretch text-white text-3xl font-light font-['Roboto'] leading-10"><?php the_field('name5'); ?></div>
         <div class="self-stretch text-white text-base font-light font-['Roboto'] leading-normal"><?php the_field('title5'); ?></div>

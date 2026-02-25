@@ -50,11 +50,6 @@ msgstr ""
 msgid "FrontPage"
 msgstr ""
 
-#. Name of the template
-#: page-frontpage-2.php:2
-msgid "FrontPage 2"
-msgstr ""
-
 #. URI of the theme
 msgid "https://hws/"
 msgstr ""

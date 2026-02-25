@@ -6,48 +6,12 @@
     <title><?php wp_title('|', true, 'right'); ?><?php bloginfo('name'); ?></title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet"type="text/css" href="<?php echo get_template_directory_uri(); ?>/style.css"/>
-    <link rel="stylesheet"type="text/css" href="<?php echo get_template_directory_uri(); ?>/theme.css"/>
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri(); ?>/public/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_template_directory_uri(); ?>/public/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="<?php echo get_template_directory_uri(); ?>/public/favicon-16x16.png">
     <link rel="manifest" href="<?php echo get_template_directory_uri(); ?>/public/site.webmanifest">
     <?php wp_head(); ?>
-
-    <style>
-.trp-language-switcher {
-  height: auto;
-  position: relative;
-  box-sizing: border-box;
-  width: auto;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.trp-language-switcher > div {
-  box-sizing: border-box;
-  padding: 0px 10px 0px 10px!important;
-  border: 1px solid #e1e1e1!important;
-  border-radius: 30px!important;
-  background-image: url("<?php echo get_template_directory_uri(); ?>/public/lang.svg");
-  background-repeat: no-repeat;
-  background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 3px) calc(1em + 0px);
-  background-size: 8px 8px, 8px 8px;
-  background-repeat: no-repeat;
-  background-color: transparent;
-}
-
-div.trp-ls-shortcode-current-language {
-width:85px!important;
-}
-
-    </style>
-
-
-    
 </head>
 <body class="bg-[#f2f3f3] overflow-x-hidden <?php body_class(); ?>">
 
@@ -56,15 +20,9 @@ width:85px!important;
     <div class="flex flex-col h-full px-2 pt-12 pb-6">
         <!-- Close button -->
         <button id="closeMenu" class="absolute -top-14 right-4 w-10 h-10 p-2 bg-transparent bg-[#f2f3f3]">
-          <!-- 
-          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-            </svg>-->
         </button>
-        
+
         <!-- Mobile Navigation Links -->
-
-
         <nav class="flex flex-col gap-6 relative">
             <a href="/products" class="text-black text-xl font-light font-['Roboto'] py-2 border-b border-gray-200">Products</a>
             <a href="/services" class="text-black text-xl font-light font-['Roboto'] py-2 border-b border-gray-200">Services</a>
@@ -73,12 +31,12 @@ width:85px!important;
             <a href="/blog" class="text-black text-xl font-light font-['Roboto'] py-2 border-b border-gray-200">Blog</a>
             <a href="/contact" class="text-black text-xl font-light font-['Roboto'] py-2 border-b border-gray-200">Contact</a>
         </nav>
-        
+
         <!-- Language Selector in Mobile Menu -->
         <div class="mt-auto">
             <div class="flex gap-4">
-                <a href="https://hws-mainz.de" class="text-black text-base font-light">EN</a>
-                <a href="https://hws-mainz.de/de" class="text-black text-base font-light">DE</a>
+                <a href="<?php echo esc_url( home_url('/') ); ?>" class="text-black text-base font-light">EN</a>
+                <a href="<?php echo esc_url( home_url('/de') ); ?>" class="text-black text-base font-light">DE</a>
             </div>
         </div>
     </div>
@@ -156,7 +114,7 @@ width:85px!important;
         data-aos-delay="150"
         data-aos-duration="600"
         data-aos-easing="ease-in-out"
-        href="https://hws-mainz.de/glass-reactor-parts-accessories/"
+        href="/glass-reactor-parts-accessories/"
         class="text-black text-base font-normal font-['Roboto'] leading-normal"
       >
         Parts &amp; Accessories
@@ -231,10 +189,10 @@ width:85px!important;
           data-aos-offset="0"
           data-aos-delay="700"
           data-aos-duration="600"
-          data-aos-easing="ease-in-out" 
+          data-aos-easing="ease-in-out"
         class="relative inline-block">
 
-          
+
           <?php echo do_shortcode('[language-switcher] '); ?>
 
 
@@ -243,106 +201,3 @@ width:85px!important;
     </nav>
   </div>
 </header>
-
-<style>
-/* Add these styles to handle mobile menu animations */
-body.menu-open {
-    overflow: hidden;
-}
-
-#mobileMenuSheet {
-    visibility: hidden;
-}
-
-#mobileMenuSheet.open {
-    visibility: visible;
-    transform: translateX(0);
-}
-
-/* Hamburger button animations */
-.menu-open #toggleMenu span:first-child {
-    transform: rotate(45deg) translate(5px, 5px);
-}
-
-.menu-open #toggleMenu span:nth-child(2) {
-    opacity: 0;
-}
-
-.menu-open #toggleMenu span:last-child {
-    transform: rotate(-45deg) translate(5px, -5px);
-}
-</style>
-
-<script>
-jQuery(document).ready(function($) {
-    const $body = $('body');
-    const $menuSheet = $('#mobileMenuSheet');
-    const $toggleBtn = $('#toggleMenu');
-    const $closeBtn = $('#closeMenu');
-
-    function openMenu() {
-        $menuSheet.addClass('open');
-        $body.addClass('menu-open');
-    }
-
-    function closeMenu() {
-        $menuSheet.removeClass('open');
-        $body.removeClass('menu-open');
-    }
-
-    $toggleBtn.on('click', openMenu);
-    $closeBtn.on('click', closeMenu);
-
-    // Close menu on escape key
-    $(document).on('keydown', function(e) {
-        if (e.key === 'Escape') closeMenu();
-    });
-
-    // Close menu when clicking on a link
-    $('#mobileMenuSheet a').on('click', closeMenu);
-
-    // Handle screen resize
-    $(window).on('resize', function() {
-        if (window.innerWidth >= 768) closeMenu(); // 768px is Tailwind's md breakpoint
-    });
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    const navbar = document.getElementById('navbar');
-    let lastScrollTop = 0;
-    let scrollTimeout;
-
-    // Add initial classes
-    navbar.classList.add('transition-opacity', 'duration-300');
-
-    function showNavbar() {
-        navbar.style.opacity = '1';
-    }
-
-    function hideNavbar() {
-        navbar.style.opacity = '0';
-    }
-
-    window.addEventListener('scroll', function() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-        // Clear the previous timeout
-        clearTimeout(scrollTimeout);
-
-        // Hide navbar on scroll
-        if (scrollTop > lastScrollTop) {
-            hideNavbar();
-        }
-
-        // Set timeout to show navbar 2 seconds after scrolling stops
-        scrollTimeout = setTimeout(() => {
-            showNavbar();
-        }, 2000);
-
-        lastScrollTop = scrollTop;
-    });
-
-    // Show navbar initially
-    showNavbar();
-});
-</script>
