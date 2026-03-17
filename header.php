@@ -111,15 +111,6 @@
       <a
         data-aos="fade-in"
         data-aos-offset="0"
-        data-aos-delay="150"
-        data-aos-duration="600"
-        data-aos-easing="ease-in-out"
-        href="/glass-reactor-parts-accessories/"
-        class="text-black text-base font-normal font-['Roboto'] leading-normal"
-      >
-        Parts &amp; Accessories
-      </a>
-
       <a
         data-aos="fade-in"
         data-aos-offset="0"

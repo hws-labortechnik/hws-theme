@@ -318,7 +318,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                     <h2 id="timeline-year" class="mb-4 text-6xl font-light">1941</h2>
                     <p id="timeline-description" class="text-lg text-gray-600">
-                        Founded as a glass production workshop, initially crafting household items like flower vases. This early focus on glassworking laid the foundation for precision manufacturing.
+                        Founded as a glass production workshop in the field of household items such as flower vases and glass jewelry. This laid the foundation for a later precision glass production.
                     </p>
                 </div>
             </div>
@@ -337,42 +337,42 @@ document.addEventListener('DOMContentLoaded', function() {
             {
                 year: '1941',
                 image: '<?php echo get_template_directory_uri(); ?>/public/h1.png',
-                description: 'Founded as a glass production workshop, initially crafting household items like flower vases. This early focus on glassworking laid the foundation for precision manufacturing.'
+                description: 'Founded as a glass production workshop in the field of household items such as flower vases and glass jewelry. This laid the foundation for a later precision glass production.'
             },
             {
                 year: '1952',
                 image: '<?php echo get_template_directory_uri(); ?>/public/h2.png',
-                description: 'Relocated to Mainz and pivoted to industrial applications, specializing in mercury thermometers for refrigeration systems. This marked the company’s entry into scientific instrumentation.'
+                description: 'Relocation to Mainz and specialization in the production of mercury glass thermometers for the laboratory sector. This was the beginning of the manufacturing of scientific instruments.'
             },
             {
                 year: '1960',
                 image: '<?php echo get_template_directory_uri(); ?>/public/h3.png',
-                description: 'Launched production of laboratory glassware, coinciding with the global post-war expansion of chemical research. Early products included basic beakers and flasks, leveraging borosilicate glass for thermal resistance—a material popularized by brands like Pyrex.'
+                description: 'The switch to laboratory glass production due to the rapid growth of the chemical industry. First products made of borosilicate glass were flasks, stopcocks, and connection systems such as cone and ball joints.'
             },
             {
                 year: '1976',
                 image: '<?php echo get_template_directory_uri(); ?>/public/h4.png',
-                description: 'Commissioned a new production facility in Mainz, enabling advanced manufacturing of complex glass systems. This expansion supported tighter quality control and modular designs.'
+                description: 'Occupancy of a new production facility in Mainz. Production was expanded to complex reactor systems with the corresponding peripherals.'
             },
             {
                 year: '1992',
                 image: '<?php echo get_template_directory_uri(); ?>/public/h5.png',
-                description: 'Innovated critical components for glass reactors, including PTFE-based stirrer guides and dead volume-free outlet valves with self-adjusting temperature compensation springs. These valves, sealing directly at reactor bottoms, minimized residue and improved chemical process efficiency.'
+                description: 'Development of suitable devices in the accessory segment, as well as integration of the highest quality materials in the field of plastics, coatings, stainless steels, and control electronics for the optimization of reactor systems.'
             },
             {
                 year: '2020',
                 image: '<?php echo get_template_directory_uri(); ?>/public/h6.png',
-                description: 'Upgraded workplace safety and comfort by installing air conditioning and exhaust systems, reflecting adherence to modern occupational health standards.'
+                description: 'Expansion of the current production facility and modification of the glassblowing workshop to modern standards.'
             },
             {
                 year: '2021',
                 image: '<?php echo get_template_directory_uri(); ?>/public/h7.png',
-                description: 'Enhanced sustainability with solar panel installations, reducing reliance on non-renewable energy sources.'
+                description: 'Energy supply via a solar system was integrated.'
             },
             {
                 year: '2024',
                 image: '<?php echo get_template_directory_uri(); ?>/public/h8.png',
-                description: 'Plans finalized to boost production capacity via a larger natural gas receiving station, ensuring energy resilience for scaled manufacturing.'
+                description: 'The gas supply in the glassblowing workshop is being optimized to meet the increased quality and precision demands of our customers.'
             }
         ];
 
@@ -487,42 +487,42 @@ document.addEventListener('DOMContentLoaded', function() {
             {
                 year: '1941',
                 image: '<?php echo get_template_directory_uri(); ?>/public/h1.png',
-                text: 'Founded as a glass production workshop, initially crafting household items like flower vases. This early focus on glassworking laid the foundation for precision manufacturing.'
+                text: 'Founded as a glass production workshop in the field of household items such as flower vases and glass jewelry. This laid the foundation for a later precision glass production.'
             },
             {
                 year: '1952',
                 image: '<?php echo get_template_directory_uri(); ?>/public/h2.png',
-                text: 'Relocated to Mainz and pivoted to industrial applications, specializing in mercury thermometers for refrigeration systems. This marked the company’s entry into scientific instrumentation.'
+                text: 'Relocation to Mainz and specialization in the production of mercury glass thermometers for the laboratory sector. This was the beginning of the manufacturing of scientific instruments.'
             },
             {
                 year: '1960',
                 image: '<?php echo get_template_directory_uri(); ?>/public/h3.png',
-                text: 'Launched production of laboratory glassware, coinciding with the global post-war expansion of chemical research. Early products included basic beakers and flasks, leveraging borosilicate glass for thermal resistance—a material popularized by brands like Pyrex.'
+                text: 'The switch to laboratory glass production due to the rapid growth of the chemical industry. First products made of borosilicate glass were flasks, stopcocks, and connection systems such as cone and ball joints.'
             },
             {
                 year: '1976',
                 image: '<?php echo get_template_directory_uri(); ?>/public/h4.png',
-                text: 'Commissioned a new production facility in Mainz, enabling advanced manufacturing of complex glass systems. This expansion supported tighter quality control and modular designs.'
+                text: 'Occupancy of a new production facility in Mainz. Production was expanded to complex reactor systems with the corresponding peripherals.'
             },
             {
                 year: '1992',
                 image: '<?php echo get_template_directory_uri(); ?>/public/h5.png',
-                text: 'Innovated critical components for glass reactors, including PTFE-based stirrer guides and dead volume-free outlet valves with self-adjusting temperature compensation springs. These valves, sealing directly at reactor bottoms, minimized residue and improved chemical process efficiency.'
+                text: 'Development of suitable devices in the accessory segment, as well as integration of the highest quality materials in the field of plastics, coatings, stainless steels, and control electronics for the optimization of reactor systems.'
             },
             {
                 year: '2020',
                 image: '<?php echo get_template_directory_uri(); ?>/public/h6.png',
-                text: 'Upgraded workplace safety and comfort by installing air conditioning and exhaust systems, reflecting adherence to modern occupational health standards.'
+                text: 'Expansion of the current production facility and modification of the glassblowing workshop to modern standards.'
             },
             {
                 year: '2021',
                 image: '<?php echo get_template_directory_uri(); ?>/public/h7.png',
-                text: 'Enhanced sustainability with solar panel installations, reducing reliance on non-renewable energy sources.'
+                text: 'Energy supply via a solar system was integrated.'
             },
             {
                 year: '2024',
                 image: '<?php echo get_template_directory_uri(); ?>/public/h8.png',
-                text: 'Plans finalized to boost production capacity via a larger natural gas receiving station, ensuring energy resilience for scaled manufacturing.'
+                text: 'The gas supply in the glassblowing workshop is being optimized to meet the increased quality and precision demands of our customers.'
             }
         ];
 
@@ -616,8 +616,8 @@ document.addEventListener('DOMContentLoaded', function() {
           class="bg-[#F2F3F3]">
               <div class="grid grid-cols-12 px-4 md:px-14 py-24 gap-6 md:gap-12 lg:gap-24">
                 <div class="col-span-12 md:col-span-3 lg:col-span-4 flex-col justify-start items-start gap-3 inline-flex">
-                  <div class="text-left text-black text-3xl font-light font-['Roboto'] leading-10">Certifications</div>
-                  <div class="self-stretch text-black text-base font-light font-['Roboto'] leading-normal">Leading laboratories trust our expertise to create custom glass reactors that meet their precise research needs.</div>
+                  <div class="text-left text-black text-3xl font-light font-['Roboto'] leading-10">References</div>
+                  <div class="self-stretch text-black text-base font-light font-['Roboto'] leading-normal">Our customers trust the quality consciousness in the manufacturing of HWS reactor systems that will meet the required demands.</div>
                 </div>
                 <div class="col-span-12 md:col-span-9 lg:col-span-8">
                     <?php include(get_template_directory() . '/logos.php'); ?>
