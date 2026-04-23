@@ -44,7 +44,7 @@
 
 <!-- Modified Header with new hamburger button -->
 <header id="navbar" class="px-4 md:px-14 fixed w-full top-0 left-0 bg-[#f2f3f3]/40 backdrop-blur-md z-40">
-  <div class="lg:w-full mx-auto h-24 bg-transparent flex justify-between items-center">
+  <div class="max-w-7xl w-full mx-auto h-24 bg-transparent flex justify-between items-center">
     <!-- Logo section -->
     <div class="w-[139px] h-14 relative">
       <a href="/" class="w-[139px] h-auto left-0 top-0 absolute z-[9999]">
@@ -103,7 +103,7 @@
         data-aos-duration="600"
         data-aos-easing="ease-in-out"
         href="/products"
-        class="text-black text-base font-normal font-['Roboto'] leading-normal"
+        class="text-black text-lg font-normal font-['Roboto'] leading-normal"
       >
         Products
       </a>
@@ -118,7 +118,7 @@
         data-aos-duration="600"
         data-aos-easing="ease-in-out"
         href="/services"
-        class="text-black text-base font-normal font-['Roboto'] leading-normal"
+        class="text-black text-lg font-normal font-['Roboto'] leading-normal"
       >
         Services
       </a>
@@ -130,7 +130,7 @@
         data-aos-duration="600"
         data-aos-easing="ease-in-out"
         href="/industries"
-        class="text-black text-base font-normal font-['Roboto'] leading-normal"
+        class="text-black text-lg font-normal font-['Roboto'] leading-normal"
       >
         Industries
       </a>
@@ -142,7 +142,7 @@
         data-aos-duration="600"
         data-aos-easing="ease-in-out"
         href="/downloads"
-        class="text-black text-base font-normal font-['Roboto'] leading-normal"
+        class="text-black text-lg font-normal font-['Roboto'] leading-normal"
       >
         Downloads
       </a>
@@ -154,7 +154,7 @@
         data-aos-duration="600"
         data-aos-easing="ease-in-out"
         href="/blog"
-        class="text-black text-base font-normal font-['Roboto'] leading-normal"
+        class="text-black text-lg font-normal font-['Roboto'] leading-normal"
       >
         Blog
       </a>
@@ -166,7 +166,7 @@
         data-aos-duration="600"
         data-aos-easing="ease-in-out"
         href="/contact"
-        class="text-black text-base font-normal font-['Roboto'] leading-normal"
+        class="text-black text-lg font-normal font-['Roboto'] leading-normal"
       >
         Contact
       </a>

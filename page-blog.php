@@ -9,26 +9,9 @@ get_header();
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 <main>
 
-<div class="mt-28 px-4 md:px-14 w-full relative">
-    <div class="w-full py-12 flex-col justify-start items-start gap-3.5 inline-flex relative">
-        <div class="w-auto h-auto absolute right-0 bottom-4 text-right md:min-w-max justify-start items-center gap-6 flex">
-        <?php
-        $all_tags = get_tags();
-        if ($all_tags) : ?>
-            <div class="flex gap-6 pb-6">
-                <div class="py-[6px] px-[10px] rounded-lg border border-black text-black text-sm">
-                    <a href="/blog">All</a>
-                </div>
-                <?php foreach ($all_tags as $tag) : ?>
-                    <div class="py-[6px] px-[10px] rounded-lg border border-zinc-500 text-sm">
-                        <a href="<?php echo get_tag_link($tag->term_id); ?>">
-                            <?php echo esc_html($tag->name); ?>
-                        </a>
-                    </div>
-                <?php endforeach; ?>
-            </div>
-        <?php endif; ?>
-        </div>
+<div class="mt-28 px-4 md:px-14 w-full">
+    <div class="w-full py-12 flex-col justify-start items-start gap-3.5 flex">
+        <div class="text-neutral-600 text-lg font-normal font-['Roboto'] leading-tight">Blog</div>
     </div>
 </div>
 
@@ -48,7 +31,7 @@ get_header();
             while ($query->have_posts()) : $query->the_post();
                 $tags = get_the_tags();
         ?>
-            <div class="bg-white rounded-lg p-5 col-span-12 md:col-span-4">
+            <div class="bg-white rounded-lg p-5 col-span-12 md:col-span-4 flex flex-col">
                 <div class="relative">
                     <a href="<?php the_permalink(); ?>">
                         <?php if (has_post_thumbnail()) : ?>
@@ -56,10 +39,10 @@ get_header();
                         <?php endif; ?>
                     </a>
                 </div>
-                <div class="mt-4">
+                <div class="mt-4 flex flex-col flex-grow">
                     <h2 class="text-xl font-medium"><?php the_title(); ?></h2>
                     <p class="mt-2 text-gray-600 text-sm"><?php echo wp_trim_words(get_the_excerpt(), 20); ?></p>
-                    <div class="mt-4 flex items-start justify-between flex-col">
+                    <div class="mt-4 flex items-start justify-between flex-col flex-grow">
                         <div class="flex items-center gap-2 text-sm text-gray-500">
                             <span><?php echo get_the_date('Y.m.d'); ?></span>
                             <span>•</span>
@@ -77,7 +60,7 @@ get_header();
                                 <?php endforeach; ?>
                             </div>
                         <?php endif; ?>
-                        <a href="<?php the_permalink(); ?>" class="mt-6 group px-4 py-2 rounded-3xl border border-neutral-600 text-sm flex items-center hover:bg-[#4F4F4F] hover:text-white">
+                        <a href="<?php the_permalink(); ?>" class="mt-auto group px-4 py-2 rounded-3xl border border-neutral-600 text-sm flex items-center hover:bg-[#4F4F4F] hover:text-white">
                             Read more
                         </a>
                     </div>

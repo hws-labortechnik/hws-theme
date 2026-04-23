@@ -1,6 +1,39 @@
 html, body {
   background:#F2F3F3;
 }
+
+/* Max-width container for centered content layout */
+.max-w-7xl {
+  max-width: 1440px;
+}
+
+/* Global content constraint — prevents edge-to-edge text on wide screens */
+main {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Blog card uniform height */
+.grid > .bg-white.rounded-lg {
+  display: flex;
+  flex-direction: column;
+}
+.grid > .bg-white.rounded-lg > .relative {
+  min-height: 200px;
+  background: #eaebeb;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.grid > .bg-white.rounded-lg > .mt-4 {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.grid > .bg-white.rounded-lg a[href].mt-auto {
+  margin-top: auto;
+}
+
 .blob-4 {
     height: 50px;
     border: 10px solid #fff;

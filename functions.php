@@ -81,7 +81,7 @@ function display_products() {
     if ($products_page) {
         setup_postdata($products_page);
         ?>
-        <div class="gap-6 grid grid-cols-12 px-4 md:px-14 w-full mx-auto">
+        <div class="gap-6 grid grid-cols-12 px-4 md:px-14 max-w-7xl w-full mx-auto">
             <?php for ($i = 1; $i <= 4; $i++) :
                 $image       = get_field('image' . $i, $products_page->ID);
                 $name        = get_field('name' . $i, $products_page->ID);
