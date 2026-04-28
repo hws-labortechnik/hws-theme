@@ -46,9 +46,9 @@
 <header id="navbar" class="px-4 md:px-14 fixed w-full top-0 left-0 bg-[#f2f3f3]/40 backdrop-blur-md z-40">
   <div class="max-w-7xl w-full mx-auto h-24 bg-transparent flex justify-between items-center">
     <!-- Logo section -->
-    <div class="w-[139px] h-14 relative">
-      <a href="/" class="w-[139px] h-auto left-0 top-0 absolute z-[9999]">
-        <img src="<?php echo get_template_directory_uri(); ?>/public/logo-light.svg" alt="HWS Labortechnik" width="139" height="57" class="w-[139px] h-auto" />
+    <div class="w-[139px] h-14 relative" style="width:180px; height:75px">
+      <a href="/" class="w-[139px] h-auto left-0 top-0 absolute z-[9999]" style="width:180px">
+        <img src="<?php echo get_template_directory_uri(); ?>/public/logo-light.svg" alt="HWS Labortechnik" width="180" height="75" class="w-[139px] h-auto" style="width:180px; height:auto" />
       </a>
     </div>
 
