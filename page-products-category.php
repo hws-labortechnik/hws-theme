@@ -11,6 +11,14 @@ get_header();
           
 <main>
 
+<?php
+// Detect whether card 3 has content. Used to:
+//   1. Conditionally render the third card slot.
+//   2. Switch the grid between 2-up (no card 3) and 3-up (with card 3) on large screens.
+$has_card3 = get_field('title_3') || get_field('url_3');
+$col_class = $has_card3 ? 'col-span-12 md:col-span-6 lg:col-span-4' : 'col-span-12 md:col-span-6';
+?>
+
 <div
 data-aos="fade-in"
 data-aos-offset="200"
@@ -32,7 +40,7 @@ data-aos-delay="300"
 data-aos-duration="600"
 data-aos-easing="ease-in-out"  
 class="grid grid-cols-12 px-4 md:px-14 max-w-7xl mx-auto w-full gap-6">
-  <div class="col-span-12 md:col-span-6 max-h-min">
+  <div class="<?php echo $col_class; ?> max-h-min">
     <div class="w-full h-auto">
     <a href="<?php echo get_field('url1'); ?>">
       <img src="<?php the_field('image1'); ?>" class="w-full h-auto object-cover rounded-lg" />
@@ -55,7 +63,7 @@ class="grid grid-cols-12 px-4 md:px-14 max-w-7xl mx-auto w-full gap-6">
       </div>
     </div>
   </div>
-  <div class="col-span-12 md:col-span-6 max-h-min">
+  <div class="<?php echo $col_class; ?> max-h-min">
     <div class="w-full h-auto">
       <a href="<?php echo get_field('url_2'); ?>">
         <img src="<?php the_field('image_2'); ?>" class="w-full h-auto object-cover rounded-lg" />
@@ -78,6 +86,31 @@ class="grid grid-cols-12 px-4 md:px-14 max-w-7xl mx-auto w-full gap-6">
       </div>
     </div>
   </div>
+<?php if ($has_card3): ?>
+  <div class="<?php echo $col_class; ?> max-h-min">
+    <div class="w-full h-auto">
+      <a href="<?php echo get_field('url_3'); ?>">
+        <img src="<?php the_field('image_3'); ?>" class="w-full h-auto object-cover rounded-lg" />
+      </a>
+    </div>
+    <div class="w-full h-auto -mt-[80px] xl:-mt-[80px]">
+      <div class="bg-white/40 rounded-lg backdrop-blur-[8px] border-stone-900/20 ml-[23.59px] mr-[23.59px] px-6 py-8">
+        <div class="headline">
+          <?php  echo get_field('title_3'); ?>
+        </div>
+        <p class="lead">
+          <?php echo get_field('description_3'); ?>
+        </p>
+        <div class="pt-6 justify-start items-center gap-2 inline-flex">
+            <a href="<?php echo get_field('url_3'); ?>" class="group transition-all duration-1000 px-4 py-2 rounded-3xl border border-neutral-600 text-sm font-normal leading-tight flex justify-start items-center hover:bg-[#4F4F4F] hover:text-white">
+              See more
+              <svg class="transition-all duration-300 w-4 h-4 float-right ml-2 text-black group-hover:text-white group-hover:w-6 group-hover:h-4 group-hover:ml-4 group-hover:scale-150" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg> 
+            </a>
+        </div>
+      </div>
+    </div>
+  </div>
+<?php endif; ?>
 </div>
 
 

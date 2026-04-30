@@ -316,3 +316,27 @@ body > main > div > div > div > p {
 
 
 
+
+/* Products page intro section — title sizing and body paragraph spacing */
+.products-intro h1,
+.products-intro h2 {
+  font-size: 2.25rem;
+  margin: 0 0 1.25rem 0;
+  line-height: 1.2;
+}
+.products-intro p {
+  margin: 0 0 0.6rem 0;
+}
+.products-intro p:last-child {
+  margin-bottom: 0;
+}
+
+/* Product category cards — uniform 1:1 aspect ratio so cards stay aligned regardless of source image proportions.
+   Targets the structure used by page-products-category.php (sub-category pages: Custom Lab Glassware,
+   Additional Reactor Components, Electronic Devices, Turnkey Miniplants). */
+.grid.grid-cols-12.max-w-7xl > div > div.w-full > a > img {
+  aspect-ratio: 1 / 1;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}

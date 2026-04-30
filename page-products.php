@@ -18,9 +18,9 @@ data-aos-delay="0"
 data-aos-duration="600"
 data-aos-easing="ease-in-out"  
 class="mt-28 w-full h-auto pr-0">
-    <div class="max-w-7xl mx-auto px-4 md:px-14 py-12 flex-col justify-start items-start gap-3.5 flex">
+    <div class="max-w-7xl mx-auto px-4 md:px-14 py-16 flex-col justify-start items-start gap-8 flex">
       <div class="text-neutral-600 text-lg font-normal font-['Roboto'] leading-tight"><?php the_title(); ?></div>
-      <div class="text-black text-xl font-light font-['Roboto'] leading-8"><?php the_content(); ?></div>
+      <div class="products-intro text-black text-xl font-light font-['Roboto'] leading-8"><?php the_content(); ?></div>
     </div>
 </div>
 
