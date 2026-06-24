@@ -10,11 +10,12 @@ add_action('after_setup_theme', 'hws_theme_setup');
  * Enqueue all theme assets (CSS + JS) in one place.
  */
 function hws_enqueue_assets() {
+    $theme_dir = get_stylesheet_directory();
+
     // --- CSS ---
     wp_enqueue_style('theme-style', get_stylesheet_uri());
-    wp_enqueue_style('hws-theme-css', get_stylesheet_directory_uri() . '/theme.css', array('theme-style'), filemtime(get_stylesheet_directory() . '/theme.css'));
+    wp_enqueue_style('hws-theme-css', get_stylesheet_directory_uri() . '/theme.css', array('theme-style'), filemtime($theme_dir . '/theme.css'));
     wp_enqueue_style('aos-css', 'https://unpkg.com/aos@next/dist/aos.css', array(), null);
-    wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', array(), null);
 
     // TranslatePress dynamic background-image (needs PHP for path)
     $trp_inline_css = '.trp-language-switcher > div { background-image: url("' . get_stylesheet_directory_uri() . '/public/lang.svg"); }';
@@ -22,9 +23,14 @@ function hws_enqueue_assets() {
 
     // --- JS ---
     wp_enqueue_script('aos-js', 'https://unpkg.com/aos@next/dist/aos.js', array(), null, true);
-    wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), null, true);
     wp_enqueue_script('fancy-dropdown', get_stylesheet_directory_uri() . '/public/js/fancy-dropdown.js', array('jquery'), '1.0', true);
-    wp_enqueue_script('hws-main-js', get_stylesheet_directory_uri() . '/js/hws-main.js', array('jquery', 'aos-js', 'swiper-js'), '1.0', true);
+    wp_enqueue_script(
+        'hws-main-js',
+        get_stylesheet_directory_uri() . '/js/hws-main.js',
+        array('jquery', 'aos-js'),
+        filemtime($theme_dir . '/js/hws-main.js'),
+        true
+    );
 }
 add_action('wp_enqueue_scripts', 'hws_enqueue_assets');
 
@@ -164,7 +170,7 @@ function display_products() {
                                     $image_array      = wp_get_attachment_image_src($attachment_id, 'square-600');
                                     $cropped_image_url = $image_array ? $image_array[0] : $image;
                                     ?>
-                                    <img class="w-full h-auto object-cover rounded-lg" src="<?php echo esc_url($cropped_image_url); ?>" />
+                                    <img class="w-full h-auto object-cover rounded-lg" src="<?php echo esc_url($cropped_image_url); ?>" alt="<?php echo esc_attr($name); ?>" loading="lazy" decoding="async" />
                                 </a>
                             <?php endif; ?>
                         </div>

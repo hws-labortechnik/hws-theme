@@ -416,3 +416,8 @@ body > main > div > div > div > p {
   color: #020202;
   background: #f5f5f5;
 }
+
+/* Lazy-loaded background placeholders */
+.hws-lazy-bg:not(.is-loaded) {
+  background-color: #eaebeb;
+}

@@ -89,25 +89,76 @@
   });
 
   /* -------------------------------------------------------
-   * 4. Swiper Initialisation (guarded)
+   * 4. Lazy-load background images and videos near viewport
    * ------------------------------------------------------- */
-  if (typeof Swiper !== 'undefined' && document.querySelector('.swiper')) {
-    new Swiper('.swiper', {
-      speed: 400,
-      grabCursor: true,
-      spaceBetween: 0,
-      autoplay: { delay: 2500 },
-      loop: false,
-      pagination: { el: '.swiper-pagination', clickable: true },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+  if ('IntersectionObserver' in window) {
+    var lazyBgObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+
+          var el = entry.target;
+          var url = el.dataset.lazyBg;
+
+          if (url) {
+            el.style.backgroundImage = "url('" + url + "')";
+            el.classList.add('is-loaded');
+          }
+
+          lazyBgObserver.unobserve(el);
+        });
       },
-      breakpoints: {
-        640:  { slidesPerView: 1, spaceBetween: 0 },
-        768:  { slidesPerView: 2, spaceBetween: 0 },
-        1024: { slidesPerView: 3, spaceBetween: 0 },
+      { rootMargin: '300px 0px' }
+    );
+
+    document.querySelectorAll('[data-lazy-bg]').forEach(function (el) {
+      lazyBgObserver.observe(el);
+    });
+
+    var lazyVideoObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+
+          var video = entry.target;
+          var src = video.dataset.src;
+
+          if (src && !video.querySelector('source')) {
+            var source = document.createElement('source');
+            source.src = src;
+            source.type = 'video/mp4';
+            video.appendChild(source);
+            video.load();
+            video.play().catch(function () {});
+          }
+
+          lazyVideoObserver.unobserve(video);
+        });
       },
+      { rootMargin: '200px 0px' }
+    );
+
+    document.querySelectorAll('[data-lazy-video]').forEach(function (el) {
+      lazyVideoObserver.observe(el);
+    });
+  } else {
+    document.querySelectorAll('[data-lazy-bg]').forEach(function (el) {
+      if (el.dataset.lazyBg) {
+        el.style.backgroundImage = "url('" + el.dataset.lazyBg + "')";
+        el.classList.add('is-loaded');
+      }
+    });
+
+    document.querySelectorAll('[data-lazy-video]').forEach(function (video) {
+      var src = video.dataset.src;
+      if (src && !video.querySelector('source')) {
+        var source = document.createElement('source');
+        source.src = src;
+        source.type = 'video/mp4';
+        video.appendChild(source);
+        video.load();
+        video.play().catch(function () {});
+      }
     });
   }
 

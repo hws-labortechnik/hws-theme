@@ -134,7 +134,7 @@ get_header();
 </style>
 
 <div id="ScrollableImage" class="fade-in">
-    <img src="<?php echo get_stylesheet_directory_uri(); ?>/public/kk.png" class="z-[0] h-full w-auto" />
+    <img src="<?php echo get_stylesheet_directory_uri(); ?>/public/kk.png" alt="" class="z-[0] h-full w-auto" fetchpriority="high" decoding="async" />
 </div>
 
 
@@ -261,16 +261,15 @@ document.addEventListener('DOMContentLoaded', function() {
                   </div>
               </div>
   
-              <video class="hidden md:block absolute top-0 bottom-0 left-0 right-0 z-10 w-full min-h-full" autoplay loop muted>
-                  <source src="<?php echo get_stylesheet_directory_uri(); ?>/public/video2.mp4" type="video/mp4">
+              <video class="hidden md:block absolute top-0 bottom-0 left-0 right-0 z-10 w-full min-h-full object-cover" muted loop playsinline preload="none" data-lazy-video data-src="<?php echo esc_url(get_stylesheet_directory_uri() . '/public/video2.mp4'); ?>">
                   Your browser does not support the video tag.
               </video>
 
-              <div class="block md:hidden absolute top-0 bottom-0 left-0 right-0 z-10 w-auto h-[960px] md:w-full md:h-auto rounded-md" style="background-image: url('<?php echo get_template_directory_uri(); ?>/public/tuz.gif'); background-position: center;"></div>
+              <div class="hws-lazy-bg block md:hidden absolute top-0 bottom-0 left-0 right-0 z-10 w-auto h-[960px] md:w-full md:h-auto rounded-md bg-cover" data-lazy-bg="<?php echo esc_url(get_template_directory_uri() . '/public/tuz.gif'); ?>" style="background-position: center;"></div>
   
           </div>
   
-          <div class="relative z-100 w-full min-h-[1260px] md:h-screen bg-cover items-center grid md:grid-cols-2 gap-16 pt-0 pb-0 px-4 md:px-14" style="background-image: url('<?php the_field('imaget'); ?>'); background-position: center top; background-size: cover;">
+          <div class="hws-lazy-bg relative z-100 w-full min-h-[1260px] md:h-screen bg-cover items-center grid md:grid-cols-2 gap-16 pt-0 pb-0 px-4 md:px-14" data-lazy-bg="<?php echo esc_url(get_field('imaget')); ?>" style="background-position: center top; background-size: cover;">
 
                 <div class="absolute bottom-12 left-4 right-4 md:left-auto md:right-12 max-w-[640px] max-h-min">
                   <div class="bg-white/30 backdrop-blur-[10px] rounded-md p-12 w-full h-auto">
@@ -314,6 +313,8 @@ document.addEventListener('DOMContentLoaded', function() {
                             src="<?php echo get_template_directory_uri(); ?>/public/h1.png"
                             alt="Historical moment from 1941"
                             class="h-full w-full object-cover"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </div>
                     <h2 id="timeline-year" class="mb-4 text-6xl font-light">1941</h2>
@@ -459,6 +460,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         src="<?php echo get_template_directory_uri(); ?>/public/h1.png"
                         alt="Historical glass item"
                         class="h-full w-full object-cover transition-all duration-500"
+                        loading="lazy"
+                        decoding="async"
                     />
                 </div>
             </div>
