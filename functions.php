@@ -30,6 +30,47 @@ add_action('wp_enqueue_scripts', 'hws_enqueue_assets');
 
 add_filter('show_admin_bar', '__return_false');
 
+/**
+ * Styled pagination for custom queries and archive pages.
+ */
+function hws_pagination($query = null) {
+    if (!$query instanceof WP_Query) {
+        global $wp_query;
+        $query = $wp_query;
+    }
+
+    if ($query->max_num_pages <= 1) {
+        return;
+    }
+
+    $paged = max(
+        1,
+        get_query_var('paged') ? (int) get_query_var('paged') : (get_query_var('page') ? (int) get_query_var('page') : 1)
+    );
+
+    $big = 999999999;
+
+    $links = paginate_links(array(
+        'base'      => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
+        'format'    => '',
+        'current'   => $paged,
+        'total'     => $query->max_num_pages,
+        'prev_text' => __('Previous'),
+        'next_text' => __('Next'),
+        'type'      => 'plain',
+        'mid_size'  => 2,
+        'end_size'  => 1,
+    ));
+
+    if (!$links) {
+        return;
+    }
+
+    echo '<nav class="hws-pagination" aria-label="' . esc_attr__('Posts pagination', 'hws-theme') . '">';
+    echo $links;
+    echo '</nav>';
+}
+
 add_image_size('square-600', 600, 600, true);
 
 // Add contact form processing

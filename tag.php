@@ -90,8 +90,8 @@ get_header();
                 </div>
       <?php endwhile; ?>
     </div>
-    <div class="pagination">
-      <?php the_posts_pagination(); ?>
+    <div class="col-span-12 w-full flex justify-center py-10">
+      <?php hws_pagination(); ?>
     </div>
   <?php else : ?>
     <p>No posts found with this tag.</p>

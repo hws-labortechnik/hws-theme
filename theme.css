@@ -340,3 +340,51 @@ body > main > div > div > div > p {
   object-fit: cover;
   object-position: center;
 }
+
+/* Blog / archive pagination */
+.hws-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.hws-pagination .page-numbers {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #525252;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: #020202;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.hws-pagination a.page-numbers:hover {
+  background: #4f4f4f;
+  border-color: #4f4f4f;
+  color: #fff;
+}
+
+.hws-pagination .page-numbers.current {
+  background: #020202;
+  border-color: #020202;
+  color: #fff;
+}
+
+.hws-pagination .page-numbers.dots {
+  min-width: auto;
+  padding: 0.5rem 0.25rem;
+  border: none;
+  color: #525252;
+}
+
+.hws-pagination .page-numbers.prev,
+.hws-pagination .page-numbers.next {
+  padding: 0.5rem 1.25rem;
+}

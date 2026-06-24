@@ -70,15 +70,9 @@ get_header();
 
         <?php wp_reset_postdata(); ?>
 
-        <?php
-        echo '<div class="col-span-12 w-full flex justify-center py-10">';
-        echo paginate_links(array(
-            'total' => $query->max_num_pages,
-            'prev_text' => __('« Previous'),
-            'next_text' => __('Next »'),
-        ));
-        echo '</div>';
-        ?>
+        <div class="col-span-12 w-full flex justify-center py-10">
+            <?php hws_pagination($query); ?>
+        </div>
 
         <?php endif; ?>
 
