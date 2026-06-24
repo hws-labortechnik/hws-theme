@@ -49,16 +49,7 @@ get_header();
                             <span><?php echo get_the_time(); ?> read</span>
                         </div>
                         <?php if ($tags) : ?>
-                            <div class="text-[#020202] text-sm flex gap-0">
-                                <?php foreach ($tags as $index => $tag) : ?>
-                                    <span class="py-4 flex items-center">
-                                        <?php echo esc_html($tag->name); ?>
-                                        <?php if ($index < count($tags) - 1) : ?>
-                                            <span class="mx-5 h-4 w-px bg-[#4f4f4f]"></span>
-                                        <?php endif; ?>
-                                    </span>
-                                <?php endforeach; ?>
-                            </div>
+                            <?php hws_the_post_tags($tags); ?>
                         <?php endif; ?>
                         <a href="<?php the_permalink(); ?>" class="mt-auto group px-4 py-2 rounded-3xl border border-neutral-600 text-sm flex items-center hover:bg-[#4F4F4F] hover:text-white">
                             Read more

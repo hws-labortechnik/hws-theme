@@ -388,3 +388,31 @@ body > main > div > div > div > p {
 .hws-pagination .page-numbers.next {
   padding: 0.5rem 1.25rem;
 }
+
+/* Blog post tag pills */
+.hws-post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.hws-post-tag {
+  display: inline-block;
+  max-width: 100%;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  color: #525252;
+  border: 1px solid #d4d4d4;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+}
+
+.hws-post-tag:hover {
+  border-color: #525252;
+  color: #020202;
+  background: #f5f5f5;
+}

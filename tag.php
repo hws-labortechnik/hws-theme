@@ -59,28 +59,19 @@ get_header();
                                     <?php if (has_post_thumbnail()) : ?>
                                         <?php the_post_thumbnail('medium', array('class' => 'aspect-video w-full h-auto object-cover rounded-lg')); ?>
                                     <?php endif; ?>
-
-                                    <?php if ($tags) : ?>
-                                        <div class="absolute top-3 right-3 flex gap-2">
-                                            <?php foreach ($tags as $tag) : ?>
-                                                <span class="bg-black/0 text-white border border-white text-xs px-2 py-1 rounded-md">
-                                                    <?php echo esc_html($tag->name); ?>
-                                                </span>
-                                            <?php endforeach; ?>
-                                        </div>
-                                    <?php endif; ?>
                                 </div>
-                                <div class="mt-4">
+                                <div class="mt-4 flex flex-col flex-grow">
                                     <h2 class="text-xl font-medium"><?php the_title(); ?></h2>
                                     <p class="mt-2 text-gray-600 text-sm">
                                         <?php echo wp_trim_words(get_the_excerpt(), 20); ?>
                                     </p>
-                                    <div class="mt-4 flex items-start justify-between flex-col">
+                                    <div class="mt-4 flex items-start justify-between flex-col flex-grow">
                                         <div class="flex items-center gap-2 text-sm text-gray-500">
                                             <span><?php echo get_the_date('Y.m.d'); ?></span>
                                             <span>•</span>
                                             <span><?php echo get_the_time(); ?> read</span>
                                         </div>
+                                        <?php hws_the_post_tags(); ?>
                                         <a href="<?php the_permalink(); ?>" class="mt-6 group transition-all duration-1000 px-4 py-2 rounded-3xl border border-neutral-600 text-sm font-normal leading-tight flex justify-start items-center hover:bg-[#4F4F4F] hover:text-white">
                                             Read more
                                             <svg class="transition-all duration-300 w-4 h-4 float-right ml-2 text-black group-hover:text-white group-hover:w-6 group-hover:h-4 group-hover:ml-4 group-hover:scale-150" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg> 

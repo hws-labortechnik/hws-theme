@@ -71,6 +71,31 @@ function hws_pagination($query = null) {
     echo '</nav>';
 }
 
+/**
+ * Render post tags as compact pill links.
+ */
+function hws_the_post_tags($post_tags = null) {
+    if ($post_tags === null) {
+        $post_tags = get_the_tags();
+    }
+
+    if (!$post_tags) {
+        return;
+    }
+
+    echo '<div class="hws-post-tags">';
+
+    foreach ($post_tags as $tag) {
+        printf(
+            '<a href="%s" class="hws-post-tag">%s</a>',
+            esc_url(get_tag_link($tag->term_id)),
+            esc_html($tag->name)
+        );
+    }
+
+    echo '</div>';
+}
+
 add_image_size('square-600', 600, 600, true);
 
 // Add contact form processing
