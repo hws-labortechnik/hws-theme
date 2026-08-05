@@ -7,6 +7,28 @@ function hws_theme_setup() {
 add_action('after_setup_theme', 'hws_theme_setup');
 
 /**
+ * Preserve the former product catalog URL after the page is removed.
+ */
+function hws_redirect_product_catalog() {
+    if (is_admin() || wp_doing_ajax()) {
+        return;
+    }
+
+    $request_path = wp_parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH);
+    if (!is_string($request_path)) {
+        return;
+    }
+
+    $normalized_path = trailingslashit('/' . trim($request_path, '/'));
+
+    if (preg_match('#^/(?:[a-z]{2}(?:-[a-z]{2})?/)?produktkatalog/$#i', $normalized_path)) {
+        wp_safe_redirect(home_url('/downloads/'), 301);
+        exit;
+    }
+}
+add_action('template_redirect', 'hws_redirect_product_catalog');
+
+/**
  * Enqueue all theme assets (CSS + JS) in one place.
  */
 function hws_enqueue_assets() {
