@@ -29,6 +29,30 @@ function hws_redirect_product_catalog() {
 add_action('template_redirect', 'hws_redirect_product_catalog');
 
 /**
+ * Extend Yoast's existing Person graph node for David Schmidt only.
+ *
+ * @param array $data    Person schema data.
+ * @param int   $user_id WordPress user ID for the Person.
+ * @return array
+ */
+function hws_extend_david_schmidt_schema_person($data, $user_id) {
+    if (6 !== (int) $user_id) {
+        return $data;
+    }
+
+    $data['sameAs'] = array(
+        'https://www.linkedin.com/in/david-schmidt-24b63a357/',
+    );
+    $data['worksFor'] = array(
+        '@id' => home_url('/#organization'),
+    );
+    unset($data['jobTitle']);
+
+    return $data;
+}
+add_filter('wpseo_schema_person_data', 'hws_extend_david_schmidt_schema_person', 10, 2);
+
+/**
  * Enqueue all theme assets (CSS + JS) in one place.
  */
 function hws_enqueue_assets() {
