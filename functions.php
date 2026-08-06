@@ -7,6 +7,52 @@ function hws_theme_setup() {
 add_action('after_setup_theme', 'hws_theme_setup');
 
 /**
+ * Preserve the former product catalog URL after the page is removed.
+ */
+function hws_redirect_product_catalog() {
+    if (is_admin() || wp_doing_ajax()) {
+        return;
+    }
+
+    $request_path = wp_parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH);
+    if (!is_string($request_path)) {
+        return;
+    }
+
+    $normalized_path = trailingslashit('/' . trim($request_path, '/'));
+
+    if (preg_match('#^/(?:[a-z]{2}(?:-[a-z]{2})?/)?produktkatalog/$#i', $normalized_path)) {
+        wp_safe_redirect(home_url('/downloads/'), 301);
+        exit;
+    }
+}
+add_action('template_redirect', 'hws_redirect_product_catalog');
+
+/**
+ * Extend Yoast's existing Person graph node for David Schmidt only.
+ *
+ * @param array $data    Person schema data.
+ * @param int   $user_id WordPress user ID for the Person.
+ * @return array
+ */
+function hws_extend_david_schmidt_schema_person($data, $user_id) {
+    if (6 !== (int) $user_id) {
+        return $data;
+    }
+
+    $data['sameAs'] = array(
+        'https://www.linkedin.com/in/david-schmidt-24b63a357/',
+    );
+    $data['worksFor'] = array(
+        '@id' => home_url('/#organization'),
+    );
+    unset($data['jobTitle']);
+
+    return $data;
+}
+add_filter('wpseo_schema_person_data', 'hws_extend_david_schmidt_schema_person', 10, 2);
+
+/**
  * Enqueue all theme assets (CSS + JS) in one place.
  */
 function hws_enqueue_assets() {
