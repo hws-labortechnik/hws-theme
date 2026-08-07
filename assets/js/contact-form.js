@@ -139,8 +139,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     setTimeout(() => {
                         thankYou.style.opacity = '0';
                         setTimeout(() => {
-                            // Redirect to home page or reload the page
-                            window.location.href = '/';
+                            const languageMatch = window.location.pathname.match(/^\/(de|es|fr|pt)(?:\/|$)/);
+                            const redirectTarget = languageMatch ? `/${languageMatch[1]}/` : '/';
+                            window.dataLayer = window.dataLayer || [];
+                            window.dataLayer.push({ event: 'contact_form_submit' });
+                            window.location.href = redirectTarget;
                         }, 300);
                     }, 3000);
                 }, 300);
