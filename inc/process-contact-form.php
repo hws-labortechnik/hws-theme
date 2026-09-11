@@ -1,25 +1,65 @@
 <?php
 /**
- * Process contact form submissions
- * Sends to HWS and uses a verified From address
+ * Contact form processing: store submission in DB, then send email.
+ * Storage-first: a failed send must never lose the inquiry.
  */
+
+/**
+ * Register the private CPT that stores contact form submissions.
+ */
+add_action('init', function () {
+    register_post_type('hws_contact_entry', array(
+        'labels' => array(
+            'name'          => 'Contact Entries',
+            'singular_name' => 'Contact Entry',
+        ),
+        'public'              => false,
+        'show_ui'             => true,
+        'show_in_menu'        => true,
+        'menu_position'       => 26,
+        'menu_icon'           => 'dashicons-email-alt',
+        'exclude_from_search' => true,
+        'publicly_queryable'  => false,
+        'show_in_rest'        => false,
+        'supports'            => array('title', 'editor', 'custom-fields'),
+        'capability_type'     => 'post',
+        'capabilities'        => array('create_posts' => 'do_not_allow'),
+        'map_meta_cap'        => true,
+    ));
+});
+
 function process_contact_form($data) {
 
     // ---- Sanitize inputs ----
-    $country   = sanitize_text_field($data['country'] ?? '');
-    $first     = sanitize_text_field($data['first_name'] ?? '');
-    $last      = sanitize_text_field($data['last_name'] ?? '');
-    $email     = sanitize_email($data['email'] ?? '');
-    $user_msg  = isset($data['message']) ? wp_kses_post($data['message']) : '';
+    $country  = sanitize_text_field($data['country'] ?? '');
+    $first    = sanitize_text_field($data['first_name'] ?? '');
+    $last     = sanitize_text_field($data['last_name'] ?? '');
+    $email    = sanitize_email($data['email'] ?? '');
+    $user_msg = isset($data['message']) ? wp_kses_post($data['message']) : '';
+    $name     = trim("$first $last");
 
-    // ---- Recipient(s) ----
-    // Primary HWS inbox (replace if you want a different shared inbox)
-    $to = 'info@hws-mainz.de';
+    // ---- 1) Store in DB first ----
+    $entry_id = wp_insert_post(array(
+        'post_type'    => 'hws_contact_entry',
+        'post_status'  => 'private',
+        'post_title'   => $name . ' (' . ($country ?: '—') . ') — ' . wp_date('Y-m-d H:i'),
+        'post_content' => $user_msg,
+        'meta_input'   => array(
+            '_hws_email'       => $email,
+            '_hws_country'     => $country,
+            '_hws_first_name'  => $first,
+            '_hws_last_name'   => $last,
+            '_hws_send_status' => 'pending',
+        ),
+    ), true);
 
-    // Optional: keep a copy at HQ automatically
-    $bcc = 'info@hws-mainz.de';
+    if (is_wp_error($entry_id)) {
+        error_log('HWS Contact: DB storage failed - ' . $entry_id->get_error_message());
+        $entry_id = 0; // proceed with send anyway; email is the fallback for the DB, too
+    }
 
-    // ---- Subject & HTML body ----
+    // ---- 2) Build and send email ----
+    $to      = 'info@hws-mainz.de';
     $subject = 'New Contact Form Submission - ' . ($country ?: 'Contact');
 
     $message = '
@@ -38,7 +78,7 @@ function process_contact_form($data) {
         <h2>New Contact Form Submission</h2>
         <div class="info">
             <p><span class="label">Country:</span> ' . esc_html($country) . '</p>
-            <p><span class="label">Name:</span> ' . esc_html(trim("$first $last")) . '</p>
+            <p><span class="label">Name:</span> ' . esc_html($name) . '</p>
             <p><span class="label">Email:</span> ' . esc_html($email) . '</p>
         </div>
         <div class="message">
@@ -48,26 +88,25 @@ function process_contact_form($data) {
     </body>
     </html>';
 
-    // ---- Headers ----
-    // IMPORTANT: use the VERIFIED sender (SMTP2GO) so delivery is accepted
+    // From is owned entirely by WP Mail SMTP (Force From Email = ON, website@hws-mainz.de).
+    // Do NOT add a From header here: the Graph API rejects sends as any other user.
     $headers = array(
         'Content-Type: text/html; charset=UTF-8',
-        'From: HWS Website <info@hws-mainz.de>',
-        'Reply-To: ' . trim("$first $last") . ' <' . $email . '>',
-        'Bcc: ' . $bcc,
+        'Reply-To: ' . $name . ' <' . $email . '>',
     );
 
-    // ---- Log (optional) ----
-    error_log('HWS Contact: sending to ' . $to . ' (subject: ' . $subject . ')');
-
-    // ---- Send ----
     $sent = wp_mail($to, $subject, $message, $headers);
 
+    // ---- 3) Stamp delivery status on the stored entry ----
+    if ($entry_id) {
+        update_post_meta($entry_id, '_hws_send_status', $sent ? 'sent' : 'failed');
+        if (!$sent) {
+            update_post_meta($entry_id, '_hws_send_error', error_get_last()['message'] ?? 'Unknown error');
+        }
+    }
+
     if (!$sent) {
-        $mail_error = error_get_last()['message'] ?? 'Unknown error';
-        error_log('HWS Contact: wp_mail failed - ' . $mail_error);
-    } else {
-        error_log('HWS Contact: email sent successfully');
+        error_log('HWS Contact: wp_mail failed - ' . (error_get_last()['message'] ?? 'Unknown error'));
     }
 
     return $sent;
