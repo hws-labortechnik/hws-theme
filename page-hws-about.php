@@ -48,14 +48,17 @@ if ( ! function_exists( 'hws_about_figure' ) ) {
 $hws_site   = 'https://www.hws-mainz.de/';
 $hws_org_id = $hws_site . '#organization';                       // Yoast's Organization @id (verified 2026-09-25)
 $hws_path   = wp_parse_url( get_permalink(), PHP_URL_PATH );
-$hws_url    = untrailingslashit( $hws_site ) . ( 'de' === $hws_about_lang ? '/de' : '' ) . ( $hws_path ? $hws_path : '/' );
+$hws_path   = $hws_path ? $hws_path : '/';
+$hws_path   = preg_replace( '#^/de(/|$)#', '/', $hws_path );    // TranslatePress returns /de/… permalinks on German requests
+$hws_page_id = untrailingslashit( $hws_site ) . $hws_path;        // Yoast's WebPage @id: the unprefixed URL in every language
+$hws_url    = untrailingslashit( $hws_site ) . ( 'de' === $hws_about_lang ? '/de' : '' ) . $hws_path;
 
 $hws_ld = array(
 	'@context' => 'https://schema.org',
 	'@graph'   => array(
 		array(
 			'@type'      => 'AboutPage',
-			'@id'        => $hws_url,                                // same @id Yoast uses for this page's WebPage node
+			'@id'        => $hws_page_id,                            // same @id Yoast uses for this page's WebPage node
 			'url'        => $hws_url,
 			'name'       => 'de' === $hws_about_lang ? 'Über HWS Labortechnik' : 'About HWS Labortechnik',
 			'inLanguage' => $hws_about_lang,
