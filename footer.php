@@ -33,6 +33,7 @@
                         <a href="<?php echo home_url('/industries'); ?>" class="text-white text-sm font-light font-['Roboto'] leading-tight">Industries</a>
                         <a href="<?php echo home_url('/downloads'); ?>" class="text-white text-sm font-light font-['Roboto'] leading-tight">Downloads</a>
                         <a href="<?php echo home_url('/blog'); ?>" class="text-white text-sm font-light font-['Roboto'] leading-tight">Blog</a>
+                        <a href="<?php echo esc_url( hws_about_nav_url() ); ?>" class="text-white text-sm font-light font-['Roboto'] leading-tight" data-no-translation><?php echo esc_html( hws_about_nav_label() ); ?></a>
                         <a href="<?php echo home_url('/contact'); ?>" class="text-white text-sm font-light font-['Roboto'] leading-tight">Contact</a>
 
                         <!-- UPDATED: separate legal links -->

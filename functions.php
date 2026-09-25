@@ -29,6 +29,55 @@ function hws_redirect_product_catalog() {
 add_action('template_redirect', 'hws_redirect_product_catalog');
 
 /**
+ * True when TranslatePress is serving German.
+ */
+function hws_is_german() {
+    global $TRP_LANGUAGE;
+    return isset($TRP_LANGUAGE) && 'de_DE' === $TRP_LANGUAGE;
+}
+
+/**
+ * About link for the hardcoded header/footer nav. Language-specific href and label,
+ * because the link carries data-no-translation (TranslatePress leaves it alone).
+ */
+function hws_about_nav_url() {
+    // Built from the raw 'home' option: TranslatePress filters home_url() on /de/ pages (would give /de/de/).
+    $base = untrailingslashit(get_option('home'));
+    return $base . (hws_is_german() ? '/de/about/' : '/about/');
+}
+
+function hws_about_nav_label() {
+    return hws_is_german() ? 'Über uns' : 'About';
+}
+
+/**
+ * About page aliases: exact-path 301s only.
+ * /ueber-uns/ -> /de/about/ ; /en/about-us/ -> /about/
+ */
+function hws_redirect_about_aliases() {
+    if (is_admin() || wp_doing_ajax()) {
+        return;
+    }
+
+    $request_path = wp_parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH);
+    if (!is_string($request_path)) {
+        return;
+    }
+
+    $normalized_path = strtolower(trailingslashit('/' . trim($request_path, '/')));
+    $map = array(
+        '/ueber-uns/'    => '/de/about/',
+        '/en/about-us/'  => '/about/',
+    );
+
+    if (isset($map[$normalized_path])) {
+        wp_safe_redirect(untrailingslashit(get_option('home')) . $map[$normalized_path], 301);
+        exit;
+    }
+}
+add_action('template_redirect', 'hws_redirect_about_aliases');
+
+/**
  * Extend Yoast's existing Person graph node for David Schmidt only.
  *
  * @param array $data    Person schema data.
