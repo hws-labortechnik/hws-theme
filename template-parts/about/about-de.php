@@ -1,6 +1,6 @@
 <?php
 /**
- * HWS About page body (DE), v3.1 2026-09-25.
+ * HWS About page body (DE), v3.2 2026-09-25.
  * Source of truth: Qualmia/citehelm clients/hws/remediation/07b-about-us-de.html
  * Rendered by page-hws-about.php inside <div class="hws-about" data-no-translation>.
  */
@@ -43,7 +43,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 <h3>Hans-Martin Schmidt – der Unternehmer</h3>
 <?php hws_about_figure( 'hans-martin' ); ?>
-<p>Hans-Martin Schmidt führt HWS als Geschäftsführer in dritter Generation. Er studierte Betriebswirtschaft und lernte den Laborglasapparatebau und die Branche bei seinem Vater, Dr. Rainer Schmidt, kennen, bevor er die Geschäftsführung übernahm. Hat sein Großvater die Apparate gebaut und sein Vater die Forschung ins Haus geholt, so führt er HWS als Unternehmen. Unter seiner Leitung führt HWS fort, was drei Generationen aufgebaut haben: Laborglasapparate aus Mainz, ausgelegt auf den Prozess des Kunden.</p>
+<p>Hans-Martin Schmidt führt HWS als Geschäftsführer in dritter Generation. Er studierte Betriebswirtschaft und lernte den Laborglasapparatebau und die Branche bei seinem Vater, Dr. Rainer Schmidt, kennen, bevor er 2015 die Geschäftsführung übernahm. Hat sein Großvater die Apparate gebaut und sein Vater die Forschung ins Haus geholt, so führt er HWS als Unternehmen: Unter seiner Leitung wurde die Mainzer Produktionsstätte erweitert, die Glasbläserei modernisiert und in Solarenergie sowie eine neue Gasversorgung der Werkstatt investiert. HWS führt fort, was drei Generationen aufgebaut haben: Laborglasapparate aus Mainz, ausgelegt auf den Prozess des Kunden.</p>
 <p>Sein Bruder David Schmidt kam einige Jahre später zu HWS und ist heute als Einkaufsleiter im Unternehmen tätig.</p>
 
 <h2>Forschung und Entwicklung</h2>

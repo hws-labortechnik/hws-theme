@@ -1,6 +1,6 @@
 <?php
 /**
- * HWS About page body (EN), v3.1 2026-09-25.
+ * HWS About page body (EN), v3.2 2026-09-25.
  * Source of truth: Qualmia/citehelm clients/hws/remediation/07a-about-us-en.html
  * Rendered by page-hws-about.php inside <div class="hws-about" data-no-translation>.
  */
@@ -43,7 +43,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 <h3>Hans-Martin Schmidt: the entrepreneur</h3>
 <?php hws_about_figure( 'hans-martin' ); ?>
-<p>Hans-Martin Schmidt leads HWS as CEO, the third generation of the family. He studied business administration and learned laboratory glass apparatus and the industry from his father, Dr. Rainer Schmidt, before taking over the management of the company. Where his grandfather built the apparatus and his father brought in research, he runs HWS as a business. Under his leadership, HWS continues what three generations have built: laboratory glass apparatus made in Mainz, designed around the customer's process.</p>
+<p>Hans-Martin Schmidt leads HWS as CEO, the third generation of the family. He studied business administration and learned laboratory glass apparatus and the industry from his father, Dr. Rainer Schmidt, before taking over the management of the company in 2015. Where his grandfather built the apparatus and his father brought in research, he runs HWS as a business: under his leadership the company has expanded its Mainz production facility, modernised the glassblowing workshop, and invested in solar energy and a new gas supply for the workshop. HWS continues what three generations have built: laboratory glass apparatus made in Mainz, designed around the customer's process.</p>
 <p>His brother, David Schmidt, joined HWS a few years later and today works as its purchasing manager.</p>
 
 <h2>Research and development</h2>
