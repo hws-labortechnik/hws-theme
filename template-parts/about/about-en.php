@@ -1,6 +1,6 @@
 <?php
 /**
- * HWS About page body (EN), v3.2 2026-09-25.
+ * HWS About page body (EN), v3.3 2026-10-13 (generational handover wording).
  * Source of truth: Qualmia/citehelm clients/hws/remediation/07a-about-us-en.html
  * Rendered by page-hws-about.php inside <div class="hws-about" data-no-translation>.
  */
@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 <h1>About HWS Labortechnik</h1>
 
 <h2>Who we are today</h2>
-<p>HWS Labortechnik (HWS Hans W. Schmidt GmbH &amp; Co. KG) designs and builds laboratory glass reactors, filter units and reactor components in borosilicate glass 3.3 for laboratory and pilot-plant work. The company was founded in 1941, has been based in Mainz since 1952, and is family-run in its third generation.</p>
+<p>HWS Labortechnik (HWS Hans W. Schmidt GmbH &amp; Co. KG) designs and builds laboratory glass reactors, filter units and reactor components in borosilicate glass 3.3 for laboratory and pilot-plant work. The company was founded in 1941, has been based in Mainz since 1952, and is family-run, currently in the handover from the second to the third generation.</p>
 
 <h2>Our history</h2>
 <div class="hws-about__table">
@@ -39,11 +39,11 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 <p>The second generation brought research into the business. Dr. Rainer Schmidt completed his doctorate at the University of Mainz in 1983 with a dissertation on the isolation, identification and characterisation of Fusarium toxins (<a href="https://d-nb.info/840925476">German National Library</a>). His early papers developed high-performance liquid chromatography (HPLC) methods for mycotoxins in food and cereals (<a href="https://pubmed.ncbi.nlm.nih.gov/7228939/">1981</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/7263805/">1981</a>, <a href="https://academic.oup.com/jat/issue/8/1">1984</a>). A 1990 WHO/IPCS review of analytical methods for mycotoxins cites his 1984 paper with Klaus Dose (<a href="https://www.inchem.org/documents/ehc/ehc/ehc105.htm">EHC 105</a>).</p>
 <p>He carried that research into the company. His 1985 paper on an optical test for detecting trichothecenes names the firm Hans W. Schmidt, Saarstraße 52, Mainz, as his affiliation (<a href="https://link.springer.com/article/10.1007/BF03191951">Springer</a>). His 1987 paper came from the Mycotoxin Research Laboratory at the same address (<a href="https://link.springer.com/article/10.1007/BF03192033">Springer</a>). The measuring principle behind it is the subject of his 1983 invention application, filed by Hans W. Schmidt (<a href="https://patents.google.com/patent/DE3345196A1/en">DE3345196A1</a>).</p>
 <p>In 1985 he founded the scientific journal <em>Mycotoxin Research</em> (<a href="https://www.mycotoxin.de/mycotoxin-research">Society for Mycotoxin Research</a>). It became the official journal of the Society for Mycotoxin Research in 2005 and has been published by Springer since 2009.</p>
-<p>Dr. Rainer Schmidt led HWS for many years and today serves as its Scientific Advisor.</p>
+<p>Dr. Rainer Schmidt led HWS for many years. Today he is one of its two managing directors, alongside his son Hans-Martin, and supports him as the company passes to the third generation, above all on scientific and technical questions.</p>
 
 <h3>Hans-Martin Schmidt: the entrepreneur</h3>
 <?php hws_about_figure( 'hans-martin' ); ?>
-<p>Hans-Martin Schmidt leads HWS as CEO, the third generation of the family. He studied business administration and learned laboratory glass apparatus and the industry from his father, Dr. Rainer Schmidt, before taking over the management of the company in 2015. Where his grandfather built the apparatus and his father brought in research, he runs HWS as a business: under his leadership the company has expanded its Mainz production facility, modernised the glassblowing workshop, and invested in solar energy and a new gas supply for the workshop. HWS continues what three generations have built: laboratory glass apparatus made in Mainz, designed around the customer's process.</p>
+<p>Hans-Martin Schmidt is the third generation of the family. He studied business administration and learned laboratory glass apparatus and the industry from his father, Dr. Rainer Schmidt. He took over the day-to-day management of the company in 2015 and today leads HWS as managing director together with his father, as the company passes from the second to the third generation. Where his grandfather built the apparatus and his father brought in research, he runs HWS as a business: under his leadership the company has expanded its Mainz production facility, modernised the glassblowing workshop, and invested in solar energy and a new gas supply for the workshop. HWS continues what three generations have built: laboratory glass apparatus made in Mainz, designed around the customer's process.</p>
 <p>His brother, David Schmidt, joined HWS a few years later and today works as its purchasing manager.</p>
 
 <h2>Research and development</h2>
@@ -55,7 +55,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 <p>We work in borosilicate glass 3.3 and build reactor and filter units to each customer's volume, design and existing setup. Our range covers outlet valves, stirrer seals, stirrers, adapters, clamps and temperature and reflux controllers. Our glassblowing masters shape every vessel by hand in our Mainz workshop.</p>
 
 <h2>How our articles are produced</h2>
-<p>Our technical articles are prepared by HWS together with an external technical-content partner. Every article is reviewed and approved by HWS management before publication, in particular by Dr. Rainer Schmidt, our Scientific Advisor, who checks scientific accuracy and terminology.</p>
+<p>Our technical articles are prepared by HWS together with an external technical-content partner. Every article is reviewed and approved by HWS management before publication, in particular by Dr. Rainer Schmidt, managing director, who checks scientific accuracy and terminology.</p>
 <p>If you find an error in one of our articles, write to <a href="mailto:info@hws-mainz.de">info@hws-mainz.de</a>. We correct factual errors and note significant corrections in the article.</p>
 
 <h2>Sources</h2>

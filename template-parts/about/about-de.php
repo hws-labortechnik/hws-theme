@@ -1,6 +1,6 @@
 <?php
 /**
- * HWS About page body (DE), v3.2 2026-09-25.
+ * HWS About page body (DE), v3.3 2026-10-13 (generational handover wording).
  * Source of truth: Qualmia/citehelm clients/hws/remediation/07b-about-us-de.html
  * Rendered by page-hws-about.php inside <div class="hws-about" data-no-translation>.
  */
@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 <h1>Über HWS Labortechnik</h1>
 
 <h2>Wer wir heute sind</h2>
-<p>HWS Labortechnik (HWS Hans W. Schmidt GmbH &amp; Co. KG) konstruiert und fertigt Laborglasreaktoren, Filtereinheiten und Reaktorkomponenten aus Borosilikatglas 3.3 für Labor und Technikum. Das Unternehmen wurde 1941 gegründet, hat seit 1952 seinen Sitz in Mainz und wird heute in dritter Generation von der Familie geführt.</p>
+<p>HWS Labortechnik (HWS Hans W. Schmidt GmbH &amp; Co. KG) konstruiert und fertigt Laborglasreaktoren, Filtereinheiten und Reaktorkomponenten aus Borosilikatglas 3.3 für Labor und Technikum. Das Unternehmen wurde 1941 gegründet, hat seit 1952 seinen Sitz in Mainz und ist ein Familienunternehmen, das sich derzeit im Übergang von der zweiten zur dritten Generation befindet.</p>
 
 <h2>Unsere Geschichte</h2>
 <div class="hws-about__table">
@@ -39,11 +39,11 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 <p>Mit der zweiten Generation kam die Forschung ins Unternehmen. Dr. Rainer Schmidt wurde 1983 an der Universität Mainz mit einer Dissertation über die Isolierung, Identifizierung und Charakterisierung von Fusarien-Toxinen promoviert (<a href="https://d-nb.info/840925476">Deutsche Nationalbibliothek</a>). Seine frühen Arbeiten entwickelten Methoden der Hochleistungsflüssigkeitschromatografie (HPLC) für Mykotoxine in Lebensmitteln und Getreide (<a href="https://pubmed.ncbi.nlm.nih.gov/7228939/">1981</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/7263805/">1981</a>, <a href="https://academic.oup.com/jat/issue/8/1">1984</a>). Eine WHO/IPCS-Übersicht der Analysemethoden für Mykotoxine aus dem Jahr 1990 zitiert seine Arbeit mit Klaus Dose von 1984 (<a href="https://www.inchem.org/documents/ehc/ehc/ehc105.htm">EHC 105</a>).</p>
 <p>Diese Forschung führte er im Unternehmen weiter. Seine Arbeit von 1985 über einen optischen Test zum Nachweis von Trichothecenen nennt als Affiliation die Firma Hans W. Schmidt, Saarstraße 52, Mainz (<a href="https://link.springer.com/article/10.1007/BF03191951">Springer</a>). Seine Arbeit von 1987 entstand im Mycotoxin Research Laboratory unter derselben Adresse (<a href="https://link.springer.com/article/10.1007/BF03192033">Springer</a>). Das zugrunde liegende Messprinzip ist Gegenstand seiner Erfindungsanmeldung von 1983, angemeldet von Hans W. Schmidt (<a href="https://patents.google.com/patent/DE3345196A1/en">DE3345196A1</a>).</p>
 <p>1985 gründete er die Fachzeitschrift <em>Mycotoxin Research</em> (<a href="https://www.mycotoxin.de/mycotoxin-research">Gesellschaft für Mykotoxinforschung</a>). Seit 2005 ist sie das offizielle Organ der Gesellschaft für Mykotoxinforschung, seit 2009 erscheint sie bei Springer.</p>
-<p>Dr. Rainer Schmidt leitete HWS über viele Jahre und ist heute wissenschaftlicher Berater des Unternehmens.</p>
+<p>Dr. Rainer Schmidt leitete HWS über viele Jahre. Heute ist er einer der beiden Geschäftsführer, gemeinsam mit seinem Sohn Hans-Martin, und begleitet die Übergabe des Unternehmens an die dritte Generation, vor allem in wissenschaftlichen und technischen Fragen.</p>
 
 <h3>Hans-Martin Schmidt – der Unternehmer</h3>
 <?php hws_about_figure( 'hans-martin' ); ?>
-<p>Hans-Martin Schmidt führt HWS als Geschäftsführer in dritter Generation. Er studierte Betriebswirtschaft und lernte den Laborglasapparatebau und die Branche bei seinem Vater, Dr. Rainer Schmidt, kennen, bevor er 2015 die Geschäftsführung übernahm. Hat sein Großvater die Apparate gebaut und sein Vater die Forschung ins Haus geholt, so führt er HWS als Unternehmen: Unter seiner Leitung wurde die Mainzer Produktionsstätte erweitert, die Glasbläserei modernisiert und in Solarenergie sowie eine neue Gasversorgung der Werkstatt investiert. HWS führt fort, was drei Generationen aufgebaut haben: Laborglasapparate aus Mainz, ausgelegt auf den Prozess des Kunden.</p>
+<p>Hans-Martin Schmidt ist die dritte Generation der Familie. Er studierte Betriebswirtschaft und lernte den Laborglasapparatebau und die Branche bei seinem Vater, Dr. Rainer Schmidt, kennen. 2015 übernahm er die operative Leitung des Unternehmens; heute führt er HWS gemeinsam mit seinem Vater als Geschäftsführer, während das Unternehmen an die dritte Generation übergeht. Hat sein Großvater die Apparate gebaut und sein Vater die Forschung ins Haus geholt, so führt er HWS als Unternehmen: Unter seiner Leitung wurde die Mainzer Produktionsstätte erweitert, die Glasbläserei modernisiert und in Solarenergie sowie eine neue Gasversorgung der Werkstatt investiert. HWS führt fort, was drei Generationen aufgebaut haben: Laborglasapparate aus Mainz, ausgelegt auf den Prozess des Kunden.</p>
 <p>Sein Bruder David Schmidt kam einige Jahre später zu HWS und ist heute als Einkaufsleiter im Unternehmen tätig.</p>
 
 <h2>Forschung und Entwicklung</h2>
@@ -55,7 +55,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 <p>Wir arbeiten mit Borosilikatglas 3.3 und bauen Reaktor- und Filtereinheiten nach Volumen, Bauform und vorhandener Anlage des Kunden. Zu unserem Programm gehören Bodenablassventile, Rührerdichtungen, Rührer, Adapter, Klammern sowie Temperatur- und Rückflussregler. Unsere Glasbläsermeister formen jedes Gefäß von Hand in unserer Mainzer Werkstatt.</p>
 
 <h2>Wie unsere Fachartikel entstehen</h2>
-<p>Unsere Fachartikel entstehen bei HWS gemeinsam mit einem externen Partner für technische Inhalte. Jeder Artikel wird vor der Veröffentlichung von der Geschäftsleitung geprüft und freigegeben, insbesondere von Dr. Rainer Schmidt, unserem wissenschaftlichen Berater, der die wissenschaftliche Richtigkeit und die Fachterminologie prüft.</p>
+<p>Unsere Fachartikel entstehen bei HWS gemeinsam mit einem externen Partner für technische Inhalte. Jeder Artikel wird vor der Veröffentlichung von der Geschäftsleitung geprüft und freigegeben, insbesondere von Dr. Rainer Schmidt, Geschäftsführer, der die wissenschaftliche Richtigkeit und die Fachterminologie prüft.</p>
 <p>Wenn Sie in einem unserer Artikel einen Fehler finden, schreiben Sie an <a href="mailto:info@hws-mainz.de">info@hws-mainz.de</a>. Sachliche Fehler korrigieren wir und vermerken wesentliche Korrekturen im Artikel.</p>
 
 <h2>Quellen</h2>
