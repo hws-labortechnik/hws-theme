@@ -31,6 +31,7 @@
             <a href="/industries" class="text-black text-xl font-light font-['Roboto'] py-2 border-b border-gray-200">Industries</a>
             <a href="/downloads" class="text-black text-xl font-light font-['Roboto'] py-2 border-b border-gray-200">Downloads</a>
             <a href="/blog" class="text-black text-xl font-light font-['Roboto'] py-2 border-b border-gray-200">Blog</a>
+            <a href="<?php echo esc_url( hws_about_nav_url() ); ?>" class="text-black text-xl font-light font-['Roboto'] py-2 border-b border-gray-200" data-no-translation><?php echo esc_html( hws_about_nav_label() ); ?></a>
             <a href="/contact" class="text-black text-xl font-light font-['Roboto'] py-2 border-b border-gray-200">Contact</a>
         </nav>
 
@@ -89,9 +90,6 @@
       <a
         data-aos="fade-in"
         data-aos-offset="0"
-      <a
-        data-aos="fade-in"
-        data-aos-offset="0"
         data-aos-delay="200"
         data-aos-duration="600"
         data-aos-easing="ease-in-out"
@@ -143,6 +141,19 @@
         data-aos-delay="600"
         data-aos-duration="600"
         data-aos-easing="ease-in-out"
+        href="<?php echo esc_url( hws_about_nav_url() ); ?>"
+        class="text-black text-lg font-normal font-['Roboto'] leading-normal"
+        data-no-translation
+      >
+        <?php echo esc_html( hws_about_nav_label() ); ?>
+      </a>
+
+      <a
+        data-aos="fade-in"
+        data-aos-offset="0"
+        data-aos-delay="700"
+        data-aos-duration="600"
+        data-aos-easing="ease-in-out"
         href="/contact"
         class="text-black text-lg font-normal font-['Roboto'] leading-normal"
       >
@@ -156,7 +167,7 @@
         <div
         data-aos="fade-in"
           data-aos-offset="0"
-          data-aos-delay="700"
+          data-aos-delay="800"
           data-aos-duration="600"
           data-aos-easing="ease-in-out"
         class="relative inline-block">
