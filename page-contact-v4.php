@@ -231,6 +231,16 @@ class="mt-28 pr-16 justify-between items-end inline-flex">
                           <div class="self-stretch text-[#888888] text-base font-light font-['Roboto'] leading-normal">Phone</div>
                           <div class="self-stretch text-[#020202] text-base font-light font-['Roboto'] leading-normal"><a href="tel:+<?php echo acf_esc_html( get_sub_field('phone') ); ?>"><?php echo acf_esc_html( get_sub_field('phone') ); ?></a></div>
                       </div>
+                      <?php
+                      // HWS default box (hws_contact group): same email column as the distributor loop
+                      $email = trim( (string) get_sub_field('email') );
+                      if ( $email !== '' && $email !== '-' && is_email( $email ) ) :
+                      ?>
+                      <div class="hws-contact-email grow shrink basis-0 flex-col justify-start items-start gap-2 inline-flex">
+                          <div class="self-stretch text-[#888888] text-base font-light font-['Roboto'] leading-normal">Email</div>
+                          <div class="self-stretch text-[#020202] text-base font-light font-['Roboto'] leading-normal" style="word-break: break-all;"><a href="mailto:<?php echo antispambot( $email ); ?>"><?php echo antispambot( $email ); ?></a></div>
+                      </div>
+                      <?php endif; ?>
                     </div>
                 </div>
                 </div>
